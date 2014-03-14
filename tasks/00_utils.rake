@@ -376,6 +376,7 @@ end
 # by escapeHTML of CGI, since this is being transfered in the xml of a jenkins
 # job via curl and DEAR JEEBUS WHAT HAVE WE DONE.
 def add_param_to_uri(uri, param)
+  puts "Adding parameter #{param} to URI #{uri}"
   require 'uri'
   uri = URI.parse(uri)
   uri.query = [uri.query, param].compact.join('&')
